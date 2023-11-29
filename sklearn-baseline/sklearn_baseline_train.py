@@ -41,7 +41,8 @@ def preprocess(content):
     #stemmed_content = [stemmer.stem(word) for word in words]
     #return ' '.join(stemmed_content)
     #-----------
-    return ''.join([i if i.isprintable() else ' ' for i in content])
+    #return ''.join([i if i.isprintable() else ' ' for i in content])
+    return content.lower()
 
 
 def main(data_dir, model_output):
