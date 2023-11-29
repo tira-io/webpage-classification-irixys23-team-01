@@ -36,10 +36,13 @@ def preprocess(content):
     #soup = BeautifulSoup(content, 'html.parser')
     #return soup.get_text()
     #---------
-    stemmer = PorterStemmer()
-    words = word_tokenize(content)
-    stemmed_content = [stemmer.stem(word) for word in words]
-    return ' '.join(stemmed_content)
+    #stemmer = PorterStemmer()
+    #words = word_tokenize(content)
+    #stemmed_content = [stemmer.stem(word) for word in words]
+    #return ' '.join(stemmed_content)
+    #-----------
+    return ''.join([i if i.isprintable() else ' ' for i in content])
+
 
 def main(data_dir, model_output):
     # Load datasets
